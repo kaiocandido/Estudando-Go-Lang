@@ -15,4 +15,4 @@ func main() {
 	generica(true)           // Passando um booleano
 	fmt.Println("Fim do programa")
 
-}
+} 
