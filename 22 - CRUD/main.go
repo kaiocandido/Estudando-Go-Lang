@@ -11,7 +11,9 @@ import (
 
 func main() {
 	router := mux.NewRouter()
-	router.HandleFunc("/usuarios", servidor.CriarUsuario).Methods("POST")
+	router.HandleFunc("/usuarios", servidor.CriarUsuario).Methods(http.MethodPost)
+	router.HandleFunc("/usuarios", servidor.BuscarUsuarios).Methods(http.MethodGet)
+	router.HandleFunc("/usuarios/{id}", servidor.BuscarUsuariosPorId).Methods(http.MethodGet)
 
 	fmt.Println("Servidor rodando na porta 5000")
 
